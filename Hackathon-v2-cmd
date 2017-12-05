@@ -116,7 +116,7 @@ grep -Po 'inet \K[\d.]+'` hack/jenkins
 docker ps -f name=Jenkins
 
 # Jenkins configuration
-
+docker exec jenkins more /var/jenkins_home/secrets/initialAdminPassword
 
 
 
