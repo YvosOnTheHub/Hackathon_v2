@@ -28,7 +28,7 @@ Get-SFDrive | Where-Object {$_.status -eq "available"} | Add-SFDrive
 Disconnect-SFCluster 192.168.0.101
 
 # Setup nDVP
-docker plugin install --alias netapp --grant-all-permissions --disable netapp/ndvpplugin:latest
+docker plugin install --alias netapp --grant-all-permissions --disable netapp/ndvp-plugin:latest
 
 mkdir /etc/netappdvp
 cat << EOF > /etc/netappdvp/config.json
