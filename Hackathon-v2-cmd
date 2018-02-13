@@ -22,6 +22,7 @@ systemctl start docker
 
 # Configure SolidFire
 docker run -it --rm netapp/solidfire-powershell:latest 
+powershell
 Connect-SFCluster 192.168.0.101 -Username admin -Password Netapp1! 
 Get-SFPendingNode | Add-SFNode 
 Get-SFDrive | Where-Object {$_.status -eq "available"} | Add-SFDrive 
