@@ -27,9 +27,10 @@ Connect-SFCluster 192.168.0.101 -Username admin -Password Netapp1!
 Get-SFPendingNode | Add-SFNode 
 Get-SFDrive | Where-Object {$_.status -eq "available"} | Add-SFDrive 
 Disconnect-SFCluster 192.168.0.101
+exit
 
-# Setup nDVP
-docker plugin install --alias netapp --grant-all-permissions --disable netapp/ndvp-plugin:latest
+# Setup Trident for Docker
+docker plugin install --alias netapp --grant-all-permissions --disable netapp/trident-plugin:latest
 
 mkdir /etc/netappdvp
 cat << EOF > /etc/netappdvp/config.json
