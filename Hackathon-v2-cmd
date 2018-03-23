@@ -31,6 +31,7 @@ Get-SFPendingNode | Add-SFNode
 Get-SFDrive | Where-Object {$_.status -eq "available"} | Add-SFDrive 
 Disconnect-SFCluster 192.168.0.101
 exit
+exit
 
 # Setup Trident for Docker
 docker plugin install --alias netapp --grant-all-permissions --disable netapp/trident-plugin:latest
